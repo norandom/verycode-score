@@ -34,18 +34,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: test the tweeter action in DRY_RUN
-        id: tweeterAction
+      - name: test the verycode action in DRY_RUN
+        id: verycodeAction
         env:
           DRY_RUN: true
         uses: ./
         with:
           message: hello world!
-          accessToken: fake
-          accessTokenSecret: fake
-          apiKey: fake
-          apiKeySecret: fake
-      - run: echo ${{ steps.tweeterAction.outputs.sentMessage }} from dry run test
+          token: fake
+      - run: echo ${{ steps.verycodeAction.outputs.sentMessage }} from dry run test
   release:
     permissions:
       contents: write
