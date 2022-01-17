@@ -61,3 +61,13 @@ func parseAndValidateInput() {
 		os.Exit(1)
 	}
 }
+
+
+func printVersion() {
+	versionStr := "dirty"
+	fmt.Printf("tweeter version: %s", versionStr)
+}
+
+func printOutput(message string) {
+	fmt.Printf("::set-output name=%s::%s\n", message)
+}
