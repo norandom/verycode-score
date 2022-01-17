@@ -36,7 +36,7 @@ func main() {
 func parseAndValidateInput() {
 	flag.StringVar(&message, "message", "", "i/o for dryRun")
 	flag.StringVar(&token, "token", "123", "Personal access token, repo scope")
-	flag.BoolVar(&dryRun, "dryRun", false, "if true or if env var DRY_RUN=true, then a tweet will not be sent")
+	flag.BoolVar(&dryRun, "dryRun", false, "for testing only")
 	flag.BoolVar(&versionFlag, "version", false, "output the version of verycode")
 	flag.Parse()
 
