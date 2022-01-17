@@ -5,23 +5,14 @@ inputs:
   message:
     description: 'message you want to tweet'
     required: true
-  apiKey:
-    description: 'api key for Twitter api'
-    required: true
-  apiKeySecret:
-    description: 'api key secret for Twitter api'
-    required: true
-  accessToken:
-    description: 'access token for Twitter api'
-    required: true
-  accessTokenSecret:
-    description: 'access token secret for Twitter api'
+  token:
+    description: 'token for GitHub api'
     required: true
 outputs:
   errorMessage:
     description: 'if something went wrong, the error message'
   sentMessage:
-    description: 'message sent to Twitter'
+    description: 'verycode score generated'
 runs:
   using: docker
   image: Dockerfile
