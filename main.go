@@ -13,7 +13,7 @@ import (
 )
 
 var (
-	poliy				string					 	// security policy for scoring 
+	policy				string					 	// security policy for scoring
 	token				string 						// GH access token
 	message				string						// for output handling
 	dryRun, versionFlag     	bool						// for CI testing
@@ -58,11 +58,9 @@ func parseAndValidateInput() {
 
 	if !dryRun {
 		
-		policyPath, err = filepath.FromSlash(policy)
-		if err != nil {
-			_, _ = fmt.Fprint(os.Stderr, err.Error())
-			os.Exit(1)
-		}
+		policyPath := filepath.FromSlash(policy)
+		fmt.Println(policyPath)
+
 		
 		if token == "" {
 			err = multierror.Append(err, errors.New("--token can't be empty"))
