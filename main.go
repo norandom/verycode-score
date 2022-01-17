@@ -12,7 +12,7 @@ import (
 
 var (
 	token, message			string
-	dryRun, versionFlag     bool
+	dryRun, versionFlag     	bool
 )
 
 func main() {
@@ -36,8 +36,8 @@ func main() {
 func parseAndValidateInput() {
 	flag.StringVar(&message, "message", "", "i/o for dryRun")
 	flag.StringVar(&token, "token", "123", "Personal access token, repo scope")
-	flag.BoolVar(&dryRun, "dryRun", false, "if true or if env var DRY_RUN=true, no score will be calc'ed")
-	flag.BoolVar(&versionFlag, "version", false, "output the version of tweeter")
+	flag.BoolVar(&dryRun, "dryRun", false, "if true or if env var DRY_RUN=true, then a tweet will not be sent")
+	flag.BoolVar(&versionFlag, "version", false, "output the version of verycode")
 	flag.Parse()
 
 	if os.Getenv("DRY_RUN") == "true" {
@@ -65,9 +65,9 @@ func parseAndValidateInput() {
 
 func printVersion() {
 	versionStr := "dirty"
-	fmt.Printf("tweeter version: %s", versionStr)
+	fmt.Printf("verycode version: %s", versionStr)
 }
 
 func printOutput(message string) {
-	fmt.Printf("::set-output name=%s", message)
+	fmt.Printf("message: %s", message)
 }
