@@ -22,5 +22,5 @@ RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 \
 # Copy the action into a thin image
 FROM gcr.io/distroless/static:latest
 WORKDIR /
-COPY --from=builder /workspace/tweeter .
+COPY --from=builder /workspace/verycode .
 ENTRYPOINT ["/verycode"]
