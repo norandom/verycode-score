@@ -30,11 +30,5 @@ runs:
   args:
     - --message
     - "${{ inputs.message }}"
-    - --apiKey
+    - --token
     - ${{ inputs.apiKey }}
-    - --apiKeySecret
-    - ${{ inputs.apiKeySecret }}
-    - --accessToken
-    - ${{ inputs.accessToken }}
-    - --accessTokenSecret
-    - ${{ inputs.accessTokenSecret }}
