@@ -11,7 +11,7 @@ import (
 )
 
 var (
-	token, message		string
+	token, message			string
 	dryRun, versionFlag     bool
 )
 
@@ -24,18 +24,18 @@ func main() {
 	}
 
 	if dryRun {
-		printOutput("dryRun: ", message)
+		printOutput("dryRun: " + message)
 		return
 	}
 
 
 	// code here
-	printOutput("Result: ", message)
+	printOutput("Result: " + message)
 }
 
 func parseAndValidateInput() {
 	flag.StringVar(&message, "message", "", "i/o for dryRun")
-	flag.StringVar(&token, "GitHub personal access token", "", "Personal access token, repo scope")
+	flag.StringVar(&token, "token", "123", "Personal access token, repo scope")
 	flag.BoolVar(&dryRun, "dryRun", false, "if true or if env var DRY_RUN=true, then a tweet will not be sent")
 	flag.BoolVar(&versionFlag, "version", false, "output the version of tweeter")
 	flag.Parse()
@@ -69,5 +69,5 @@ func printVersion() {
 }
 
 func printOutput(message string) {
-	fmt.Printf("::set-output name=%s::%s\n", message)
+	fmt.Printf("::set-output name=%s", message)
 }
